@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'j5e++182xivs@vxkpv@*7hitn3eu=al=b!bnq-=51*@ghd0k_='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['secure-brook-79251.herokuapp.com', '127.0.0.1']
 
@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 AUTH_SERVICE_BASE_URL = 'http://127.0.0.1:8000/' if DEBUG else 'https://polar-shelf-60214.herokuapp.com/'
 STATISTIC_SERVICE_BASE_URL = 'http://127.0.0.1:8004/'
 DANCERS_SERVICE_BASE_URL = 'http://127.0.0.1:8001/' if DEBUG else 'https://fierce-plains-12493.herokuapp.com/'
-COMPETITIONS_SERVICE_BASE_URL = 'http://127.0.0.1:8003/'
+COMPETITIONS_SERVICE_BASE_URL = 'http://127.0.0.1:8003/' if DEBUG else 'https://desolate-badlands-42848.herokuapp.com/'
 
 SERVICE_ID = 'Clubs'
 SERVICE_SECRET = 'qwerty'
@@ -161,7 +161,7 @@ LOGGING = {
     }
 }
 
-ORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
